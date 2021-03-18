@@ -14,7 +14,7 @@ body {
     font-family: 'Shadows Into Light', cursive;
 }
 
-header > .logo {
+header > a > .logo {
     width: 150px;
     margin: .5rem;
 }
