@@ -10,66 +10,40 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: linear-gradient(140deg, rgb(255, 173, 237), rgb(233, 92, 255) 60%);
+    background: linear-gradient(140deg, rgb(237, 178, 255), rgb(179, 47, 199) 60%);
     font-family: 'Shadows Into Light', cursive;
 }
 
-header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-}
-
 header > .logo {
-    margin: .5rem 0 0 1rem;
-    width: 100px;
+    width: 150px;
+    margin: .5rem;
 }
 
 main {
-    display: grid;
-    justify-items: center;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    height: 100%;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.countdown-wrapper {
-    display: grid;
-    align-content: center;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 25px;
-    background-color: white;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 25px;
-    padding: 2rem;
-    width: 80%;
-    max-width: 500px;
-    height: 20rem;
+    height: 70vh;
+    text-align: center;
 }
 
 .countdown-wrapper > h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 4em;
+    font-size: 2.5em;
 }
 
 .countdown-wrapper > button {
     font-family: inherit;
-    font-size: 1.2em;
-    margin: 1rem;
-    background-color: rgb(200, 100, 215);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    padding: .5rem 1rem;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     border: none;
-    border-radius: 25px;
-    outline: none;
+    padding: .5rem 1rem;
     cursor: pointer;
+    outline: none;
     transition: transform .2s ease-out;
 }
 
@@ -78,20 +52,5 @@ main {
 }
 
 .text {
-    text-align: center;
-    padding: 1rem;
-    color: white;
-}
-
-@media only screen and (min-width: 768px) {
-    .text {
-        text-align: start;
-        font-size: 1.5em;
-        padding: 2rem;
-        transform: translateX(-50px);
-    }
-
-    header > .logo {
-        width: 150px;
-    }
+    margin-top: 5rem;
 }

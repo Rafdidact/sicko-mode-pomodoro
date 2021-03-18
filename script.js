@@ -1,8 +1,8 @@
 const startingTime = .2;
 let time = startingTime * 60;
 
-const countdownTitle = document.getElementById("countdownTitle");
-const countdownBtn = document.getElementById("countdown");
+const countdownTitle = document.getElementById("countdownDisplay");
+const countdownBtn = document.getElementById("countdownBtn");
 const song = document.getElementById("song");
 
 countdownBtn.onclick = function() {
