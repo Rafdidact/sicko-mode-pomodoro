@@ -9,11 +9,13 @@ let itrvl;
 
 window.addEventListener("click", (e) => {
     const target = e.target.textContent;
-    if (target === "start 25min session") {
+    if (target === "start 25min session" || target === "continue") {
         itrvl = setInterval(timeCalc, 1000);
+        song.pause();
+        song.currentTime = 0;
     } else if (target === "pause") {
         clearInterval(itrvl);
-        countdownBtn.textContent = "start 25min session";
+        countdownBtn.textContent = "continue";
     } else {
         return;
     }
@@ -26,4 +28,13 @@ function timeCalc() {
     countdownTitle.textContent = `${minutes}:${seconds}`;
     countdownBtn.textContent = "pause";
     time--;
+    if (time < 0) {
+        song.play();
+        clearInterval(itrvl);
+        countdownTitle.textContent = "you're done!";
+        countdownBtn.textContent = "start 25min session";
+        time = 25 * 60;
+    } else {
+        return;
+    }
 }

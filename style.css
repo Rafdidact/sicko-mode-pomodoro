@@ -14,9 +14,17 @@ body {
     font-family: 'Shadows Into Light', cursive;
 }
 
-header > a > .logo {
-    width: 150px;
-    margin: .5rem;
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+header > a > .reload-icon {
+    margin-right: 1rem;
 }
 
 main {
