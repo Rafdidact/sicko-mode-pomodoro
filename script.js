@@ -11,7 +11,7 @@ window.addEventListener("click", (e) => {
     const target = e.target.textContent;
     if (target === "start 25min session") {
         itrvl = setInterval(timeCalc, 1000);
-    } else if (target === "restart") {
+    } else if (target === "pause") {
         clearInterval(itrvl);
         countdownBtn.textContent = "start 25min session";
     } else {
@@ -24,6 +24,6 @@ function timeCalc() {
     seconds = time % 60;
     seconds = seconds < 10 ? "0" + seconds : seconds;
     countdownTitle.textContent = `${minutes}:${seconds}`;
-    countdownBtn.textContent = "restart";
+    countdownBtn.textContent = "pause";
     time--;
 }
