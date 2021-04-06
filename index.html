@@ -23,8 +23,13 @@
     <main>
         <div class="countdown-wrapper">
             <h1 id="countdownDisplay">go ahead!</h1>
-            <button id="countdownBtn">start 25min session</button>
+            <button class="btn btn-primary" id="countdownBtn25min">start 25min session</button>
+            <button class="btn btn-secondary" id="countdownBtnCustom">select my own time</button>
         </div>
+        <form class="choose-time" action="">
+            <input autocomplete="off" id="inputTime" type="text">
+            <button id="setTime" class="btn btn-primary" type="submit">Go!</button>
+        </form>
         <div class="text">
             <h2>
                 Motivation for your study sessions
