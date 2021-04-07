@@ -1,12 +1,12 @@
 const countdownTitle = document.getElementById("countdownDisplay");
 const countdownBtn25min = document.getElementById("countdownBtn25min");
 const countdownBtnCustom = document.getElementById("countdownBtnCustom");
+const chooseTimeForm = document.getElementById("chooseTime");
 const inputTime = document.getElementById("inputTime");
 const setTime = document.getElementById("setTime");
 const song = document.getElementById("song");
 
-let startingTime = 25;
-let time = startingTime * 60;
+let time = 25 * 60;
 let minutes;
 let seconds;
 let itrvl;
@@ -18,17 +18,29 @@ window.addEventListener("click", (e) => {
         itrvl = setInterval(timeCalc, 1000);
         song.pause();
         song.currentTime = 0;
+        countdownBtnCustom.textContent = "cancel";
     } else if (target === "pause") {
         clearInterval(itrvl);
         countdownBtn25min.textContent = "continue";
+    } else if (target === "select my own time") {
+        chooseTimeForm.style.display = "block";
+        countdownBtnCustom.textContent = "cancel";
+    } else if (target === "cancel") {
+        clearInterval(itrvl);
+        time = 25 * 60;
+        countdownTitle.textContent = "go ahead!";
+        chooseTimeForm.style.display = "none";
+        countdownBtn25min.textContent = "start 25min session";
+        countdownBtnCustom.textContent = "select my own time";
     } else if (target === "Go!") {
-        startingTime = inputTime.value;
+        time = inputTime.value * 60;
         inputTime.value = "";
-        if (startingTime >= 25 || startingTime !== Number) {
-            window.alert("Please set a time below 25min!");
+        if (time > 25 * 60 || isNaN(time)) {
+            window.alert("Please select a number below 25")
             return;
         } else {
             itrvl = setInterval(timeCalc, 1000);
+            chooseTimeForm.style.display = "none";
         }
     } else {
         return;
@@ -47,6 +59,7 @@ function timeCalc() {
         clearInterval(itrvl);
         countdownTitle.textContent = "you're done!";
         countdownBtn25min.textContent = "start 25min session";
+        countdownBtnCustom.textContent = "select my own time";
         time = 25 * 60;
     } else {
         return;
