@@ -12,7 +12,6 @@ let seconds;
 let itrvl;
 
 window.addEventListener("click", (e) => {
-    e.preventDefault();
     const target = e.target.textContent;
     if (target === "start 25min session" || target === "continue") {
         itrvl = setInterval(timeCalc, 1000);
@@ -35,7 +34,7 @@ window.addEventListener("click", (e) => {
     } else if (target === "Go!") {
         time = inputTime.value * 60;
         inputTime.value = "";
-        if (time > 25 * 60 || isNaN(time)) {
+        if (time > 25 * 60 || time == "" || isNaN(time)) {
             window.alert("Please select a number below 25")
             return;
         } else {
