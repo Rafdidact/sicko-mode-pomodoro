@@ -76,6 +76,7 @@ main {
 }
 
 .choose-time > input {
+    font-family: inherit;
     background-color: transparent;
     border: 2px black;
     border-style: none none solid none;
