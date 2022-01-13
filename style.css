@@ -12,9 +12,10 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: linear-gradient(140deg, rgb(237, 178, 255), rgb(179, 47, 199) 60%);
+    background: linear-gradient(140deg, rgb(219, 174, 255), rgb(162, 122, 255) 60%);
     font-family: 'Lato', sans-serif;
     min-height: 100vh;
+    line-height: 1.5;
 }
 
 header {
