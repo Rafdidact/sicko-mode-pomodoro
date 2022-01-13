@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
 html {
     box-sizing: border-box;
 }
@@ -11,7 +13,7 @@ body {
     padding: 0;
     height: 100vh;
     background: linear-gradient(140deg, rgb(237, 178, 255), rgb(179, 47, 199) 60%);
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Lato', sans-serif;
 }
 
 header {
@@ -46,13 +48,12 @@ main {
 .btn {
     font-family: inherit;
     font-weight: bold;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     border: none;
     padding: .5rem 1rem;
     margin: .5rem;
     cursor: pointer;
     outline: none;
-    transition: transform .2s ease-out;
+    transition: all .2s ease-out;
 }
 
 .btn-primary {
@@ -68,7 +69,8 @@ main {
 }
 
 .btn:hover {
-    transform: scale(1.1);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
 }
 
 .choose-time {
